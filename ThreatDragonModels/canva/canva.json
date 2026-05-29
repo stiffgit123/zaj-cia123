@@ -87,8 +87,8 @@
           },
           {
             "position": {
-              "x": 500,
-              "y": 310
+              "x": 290,
+              "y": 300
             },
             "size": {
               "width": 90,
@@ -391,7 +391,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "Ruch użytkownika w przeglądarce",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -405,7 +405,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Data Flow"
+              "Ruch użytkownika w przeglądarce"
             ],
             "id": "72f41166-0ea4-46fb-b92c-e0c75437dd97",
             "source": {
@@ -576,7 +576,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "Komunikacja API",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -590,7 +590,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Data Flow"
+              "Komunikacja API"
             ],
             "id": "ba396dd8-1458-4d10-a63a-dfdea4d6c9a9",
             "source": {
@@ -697,6 +697,10 @@
               {
                 "x": 830,
                 "y": 80
+              },
+              {
+                "x": 950,
+                "y": 50
               }
             ]
           },
@@ -796,81 +800,6 @@
             "target": {
               "cell": "13dea01a-e2d4-46e7-92fe-2d675fa48c2e",
               "port": "455c976c-71a9-4e31-98dc-53fadabf6b4d"
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
             }
           },
           {
@@ -1423,7 +1352,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "Komunikacja z Bazą",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1437,7 +1366,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Data Flow"
+              "Komunikacja z Bazą"
             ],
             "id": "b1eb431c-1f4e-42e7-875d-89ee7fb818ea",
             "source": {
