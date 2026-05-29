@@ -330,28 +330,21 @@
                   "severity": "High",
                   "type": "Tampering",
                   "description": "Atakujący wstrzykuje złośliwy kod JavaScript, który wykonuje sie w przeglądarce ofiary. Jeśli przeglądarka przechowuje token autoryzujący atakujący może go wykraść ",
-                  "mitigation": "Defences include providing enforcement of behavioral workflow and anti-automation",
+                  "mitigation": "Wdrożenie ścisłej polityki Content Security Policy. przechowywanie tokenów sesyjnych wyłącznie w ciasteczkach z flagą HttpOnly( blokowanie działania JavaScript)",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 1,
-                  "score": ""
+                  "score": "3"
                 }
               ],
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 2,
+                "tampering": 4,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -801,7 +794,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -817,21 +811,40 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Przekazanie Autorized COde",
+              "name": "Przekazanie Autorized Code",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
+              "threats": [
+                {
+                  "id": "a7ea7611-71e4-4bc0-9bf7-cc180d50c38a",
+                  "title": "No Suggestions available",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Atakujący wymusza na ofierze użycie konkretnego, wygenerowanego przez siebie identyfikatora sesji. Po tym, jak ofiara pomyślnie zaloguje sie przez Google przy użyciu tej sesji, System Backendowy nie rotuje identyfikatora na nowy. W efekcie haker i ofiara współdzielą sesję, dając atakującemu pełen dostep do konta.",
+                  "mitigation": "Bezwzględne unieważnienie starych sesji i generowanie nowego kryptograficznie bezpiecznego identyfikatora sesji natychmiast po uzyskaniu autoryzacji Google ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": "3"
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
-              "Przekazanie Autorized COde"
+              "Przekazanie Autorized Code"
             ],
             "id": "1cadbf18-78ca-4773-b49a-8b98482598f6",
             "source": {
@@ -841,7 +854,13 @@
             "target": {
               "cell": "13dea01a-e2d4-46e7-92fe-2d675fa48c2e",
               "port": "455c976c-71a9-4e31-98dc-53fadabf6b4d"
-            }
+            },
+            "vertices": [
+              {
+                "x": 940,
+                "y": 420
+              }
+            ]
           },
           {
             "position": {
@@ -977,8 +996,8 @@
                 "text": "Canva Backend"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1075,12 +1094,47 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "430c3b88-66b5-4510-89e2-efc11cb377e9",
+                  "title": "Brak autoryzacji na poziomie obiektu",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Elevation of privilege",
+                  "description": "Użytkownik A jest poprawnie zalogowany przez Google, ale modyfikuje parametry zapytania, próbując uzyskać dostęp do prywatnego projektu Użytkownika B. Jeśli backend nie weryfikuje własności obiektu, dochodzi do nieautoryzowanego przejęcia danych lub ich modyfikacji",
+                  "mitigation": "Ścisła weryfikacja uprawnień na poziomie backendu dla każdego żądania. Identyfikatory zasobów powinny być niemożliwe do odgadnięcia ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": "3"
+                },
+                {
+                  "id": "03f89ca2-4733-4e54-8e09-4b9a45d61ff9",
+                  "title": "Wyczerpanie zasobów serwera DoS",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Atakujący wysyła masowo specjalne spreparowanie , bardzo zasobochłonne żądania do backendu. Prowadzi to do całkowitego zużycia procesora lub pamięci na serwerach, skutkując przerwą w działaniu usługi.",
+                  "mitigation": "Limitowanie wielkości żądań i czasu ich przetwarzania, wdrażanie paginacji wyników, stosowanie Web Application Firewall (WAF) do filtrowania złośliwego ruchu oraz asynchroniczne przetwarzanie ciężkich zadań w kolejkach.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
+                  "score": "3"
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -1217,11 +1271,13 @@
                 "text": "Baza Danych Canva"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1318,13 +1374,33 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "a1292709-be4b-4bf8-8d99-857e1bfada7f",
+                  "title": "Wyciek danych",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "type": "Information disclosure",
+                  "description": "Atakujący wykorzystuje lukę w logicy aplikacji, błędną autoryzajcę, aby uzyskać nieautoryzowany dostęp do bazy danych Canvy. Pozwala to na masowe pobieranie danych użytkowników. ",
+                  "mitigation": "Stosowanie zapytań parametrycznych lub bezpiecznych systemów ORM, co całkowicie eliminuje ryzyko SQL injection. Wdrożenie ścisłej kontroli dostępu do każdego rekordu. Szyfrowanie najbardziej wrażliwych danych w bazie.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": "4"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 3,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -1424,6 +1500,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 1
+    "threatTop": 5
   }
 }
