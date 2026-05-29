@@ -25,34 +25,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Boundary",
-              "name": "Internet",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false,
-              "crossingFlows": [],
-              "containedElements": []
-            },
-            "labels": [
-              "Internet"
-            ],
-            "id": "e8d490dc-f7c9-45e2-b3c3-fcb2ea631935",
-            "source": {
-              "x": 860,
-              "y": 190
-            },
-            "target": {
-              "x": 912,
-              "y": 563
-            }
-          },
-          {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": -1,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
               "name": "Środowisko Google",
               "description": "",
               "isTrustBoundary": true,
@@ -76,6 +48,40 @@
               {
                 "x": 1120,
                 "y": 160
+              }
+            ]
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": -1,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Internet",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false,
+              "crossingFlows": [],
+              "containedElements": []
+            },
+            "labels": [
+              "Internet"
+            ],
+            "id": "e8d490dc-f7c9-45e2-b3c3-fcb2ea631935",
+            "source": {
+              "x": 860,
+              "y": -10
+            },
+            "target": {
+              "x": 912,
+              "y": 563
+            },
+            "vertices": [
+              {
+                "x": 860,
+                "y": 10
               }
             ]
           },
@@ -616,7 +622,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "Przekierowanie",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -630,7 +636,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Data Flow"
+              "Przekierowanie"
             ],
             "id": "ab2ebc4c-d1dc-4b15-9f8d-d1279a8c5d3f",
             "source": {
@@ -640,6 +646,231 @@
             "target": {
               "cell": "38b0e6c3-b354-4465-81a1-1f5c3045701a",
               "port": "c9df14f0-d87e-41ca-bba6-f97d4eccb505"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Logowanie Google",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Logowanie Google"
+            ],
+            "id": "ecf8b35d-1ab1-4d7c-bc63-15992e80f810",
+            "source": {
+              "cell": "04d1f386-8b47-4290-a44d-cab59d3195b0",
+              "port": "b25b8496-84b4-4dc5-a891-9395f4702f7a"
+            },
+            "target": {
+              "cell": "38b0e6c3-b354-4465-81a1-1f5c3045701a",
+              "port": "455c976c-71a9-4e31-98dc-53fadabf6b4d"
+            },
+            "vertices": [
+              {
+                "x": 830,
+                "y": 80
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Wymiana Tokenów",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Wymiana Tokenów"
+            ],
+            "id": "3d5fdfbf-1ad0-439b-b0e8-4503d949710f",
+            "source": {
+              "cell": "13dea01a-e2d4-46e7-92fe-2d675fa48c2e",
+              "port": "a89e8ce9-9cf9-4b48-bd20-8606e4912355"
+            },
+            "target": {
+              "cell": "38b0e6c3-b354-4465-81a1-1f5c3045701a",
+              "port": "a89e8ce9-9cf9-4b48-bd20-8606e4912355"
+            },
+            "vertices": [
+              {
+                "x": 1190,
+                "y": 220
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Przekazanie Autorized COde",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Przekazanie Autorized COde"
+            ],
+            "id": "1cadbf18-78ca-4773-b49a-8b98482598f6",
+            "source": {
+              "cell": "04d1f386-8b47-4290-a44d-cab59d3195b0",
+              "port": "c9df14f0-d87e-41ca-bba6-f97d4eccb505"
+            },
+            "target": {
+              "cell": "13dea01a-e2d4-46e7-92fe-2d675fa48c2e",
+              "port": "455c976c-71a9-4e31-98dc-53fadabf6b4d"
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
             }
           },
           {
@@ -884,8 +1115,8 @@
           },
           {
             "position": {
-              "x": 1140,
-              "y": 50
+              "x": 1130,
+              "y": 0
             },
             "size": {
               "width": 60,
