@@ -106,6 +106,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -189,7 +190,6 @@
               ]
             },
             "id": "08c80bf8-263e-460a-88c5-5bc3edb6ad30",
-            "zIndex": 1,
             "data": {
               "type": "tm.Process",
               "name": "użytkownik",
@@ -226,6 +226,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 2,
             "ports": {
               "groups": {
                 "top": {
@@ -309,7 +310,6 @@
               ]
             },
             "id": "04d1f386-8b47-4290-a44d-cab59d3195b0",
-            "zIndex": 2,
             "data": {
               "type": "tm.Process",
               "name": "Przeglądarka",
@@ -883,6 +883,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 11,
             "ports": {
               "groups": {
                 "top": {
@@ -966,7 +967,6 @@
               ]
             },
             "id": "59a925df-3447-4244-8d2b-f9f180f42679",
-            "zIndex": 11,
             "data": {
               "type": "tm.Process",
               "name": "Canva Frontend",
@@ -1003,6 +1003,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 12,
             "ports": {
               "groups": {
                 "top": {
@@ -1086,7 +1087,6 @@
               ]
             },
             "id": "13dea01a-e2d4-46e7-92fe-2d675fa48c2e",
-            "zIndex": 12,
             "data": {
               "type": "tm.Process",
               "name": "Canva Backend",
@@ -1158,6 +1158,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 13,
             "ports": {
               "groups": {
                 "top": {
@@ -1241,7 +1242,6 @@
               ]
             },
             "id": "38b0e6c3-b354-4465-81a1-1f5c3045701a",
-            "zIndex": 13,
             "data": {
               "type": "tm.Process",
               "name": "Google Identity Provider",
@@ -1283,6 +1283,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 14,
             "ports": {
               "groups": {
                 "top": {
@@ -1366,7 +1367,6 @@
               ]
             },
             "id": "2668094e-34a0-4755-b729-d907ba4a800d",
-            "zIndex": 14,
             "data": {
               "type": "tm.Store",
               "name": "Baza Danych Canva",
@@ -1401,6 +1401,13 @@
                 "informationDisclosure": 3,
                 "denialOfService": 0
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1513,7 +1520,17 @@
             "target": {
               "cell": "13dea01a-e2d4-46e7-92fe-2d675fa48c2e",
               "port": "a89e8ce9-9cf9-4b48-bd20-8606e4912355"
-            }
+            },
+            "vertices": [
+              {
+                "x": 1230,
+                "y": 440
+              },
+              {
+                "x": 1210,
+                "y": 440
+              }
+            ]
           }
         ]
       }
