@@ -219,8 +219,8 @@
                 "text": "Przeglądarka"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -317,12 +317,41 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "a5c6516c-a827-4b28-a2a7-9e82e17674eb",
+                  "title": "Kradzież tokenu autoryzującego",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Atakujący wstrzykuje złośliwy kod JavaScript, który wykonuje sie w przeglądarce ofiary. Jeśli przeglądarka przechowuje token autoryzujący atakujący może go wykraść ",
+                  "mitigation": "Defences include providing enforcement of behavioral workflow and anti-automation",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 2,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -695,8 +724,20 @@
             },
             "vertices": [
               {
+                "x": 780,
+                "y": 180
+              },
+              {
                 "x": 830,
                 "y": 80
+              },
+              {
+                "x": 850,
+                "y": 60
+              },
+              {
+                "x": 870,
+                "y": 60
               },
               {
                 "x": 950,
@@ -1383,6 +1424,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 1
   }
 }
